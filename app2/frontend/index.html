@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>LOCATION INDENTIFIER</title>
+      <meta name="viewport" content="initial-scale=1.0">
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="main.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8bQzMru84BpSm9d9pl6bNWn8U10Ru9U0&&sensor=false"
+              async defer></script> 
+
+  </head>
+
+  <body>
+    <div class="container">  
+      <h1>Danh sách Request</h1>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+   
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Note</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody id="clients">
+            </tbody>
+          </table>
+        </div>
+      </div>
+   
+    <script id="client-template" type="text/x-handlebars-template">
+      {{#each this}}
+        <tr>
+          <td>number</td>
+          <td>{{name}}</td>
+          <td>{{phone}}</td>
+          <td id="address-map">{{address}}</td>
+
+          <td>{{note}}</td>
+          
+          <td> 
+                <button id="geometric" onclick="onclickbutton('{{address}}')">Xem vị trí</button>
+          </td>
+        </tr>
+        
+      {{/each}}
+    </script>
+    
+     <div id="address-geometry"></div>
+    <div id="googleMap"  style="width:500px;height:380px; background: yellow "></div>
+    <div id="address-map">gffaafdfa</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+    
+    <script>
+     
+
+    </script>
+    
+    <script src="./load.js"></script>
+    <script src="geocode.js"></script>
+      
+   
+
+  </body>
+</html>
